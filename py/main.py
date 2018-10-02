@@ -1,13 +1,16 @@
+from random import randint
 """
 Convert ASCII to LEET and vice-versa
 Encrypting is ASCII to LEET
 Decrypting is LEET to ASCII
 """
 
-SUBSTITUTIONS = [['a','4'], ['e','3'], ['g', '6'], ['i','1'], ['o','0'], ['s', '5'], ['t','7'], ['A','4'], ['E','3'], ['G', '6'], ['I','1'], ['O','0'], ['S', '5'], ['T','7']] # Create a list of substitutions for each rule of LEET language
+SUBSTITUTIONS = [['a',['4', '@']], ['e','3'], ['g', '6'], ['i','1'], ['o','0'], ['s', '5'], ['t','7']] # Create a list of substitutions for each rule of LEET language
 
 
-def encrypt(message, substitutions):
+def encrypt(message):
+  substitutions = SUBSTITUTIONS
+  message = message.lower()
   """
   Takes a string as input returns the LEET version of that string
   Use: 
@@ -16,13 +19,20 @@ def encrypt(message, substitutions):
   """
   for article in substitutions: # Repeats for each article of SUBSTITUTIONS list
     old = article[0] # Set variable old to first element of article 
-    new = article[1] # Set variable new to second element of article 
+    new = '' # Set variable new to second element of article 
+    if isinstance(article[1], list):
+      r = randint(0, len(article[1]))
+      new = article[1][r]
+    else:
+      new =  article[1]
     message = message.replace(old, new) # Use replace string method to substitute old value by new value 
     
   return message # Returns encrypted message
  
 
-def decrypt(message, substitutions):
+def decrypt(message):
+  substitutions = SUBSTITUTIONS
+  message = message.lower()
   """
   Takes a string encrypted with LEET as input and returns the original version
   Use:
@@ -31,8 +41,13 @@ def decrypt(message, substitutions):
   """
   for article in substitutions: # Repeats for each article of SUBSTITUTIONS list
     old = article[1] # Set variable old to second element of article 
-    new = article[0] # Set variable new to first element of article 
-    message = message.replace(old, new) # Use replace string method to substitute old value by new value
+    if isinstance(old, list):
+      for i in old:
+        new = article[0] # Set variable new to first element of article
+        message = message.replace(i, new) # Use replace string method to substitute old value by new value
+    else:
+      new = article[0] # Set variable new to first element of article 
+      message = message.replace(old, new) # Use replace string method to substitute old value by new value
     
   return message # Returns decrypted message
 
