@@ -9,6 +9,8 @@ Leet originated within bulletin board systems (BBS) in the 1980s, where having "
 
 Once the reserve of hackers, crackers, and script kiddies, leet has since entered the mainstream. It is now also used to mock newbies, also known colloquially as noobs, or newcomers, on web sites, or in gaming communities. Some consider emoticons and ASCII art, like smiley faces, to be leet, while others maintain that leet consists of only symbolic word encryption. More obscure forms of leet, involving the use of symbol combinations and almost no letters or numbers, continue to be used for its original purpose of encrypted communication. It is also sometimes used as a script language. Variants of leet have been used for censorship purposes for many years; for instance "@$$" (ass) and "$#!+" (shit) are frequently seen to make a word appear censored to the untrained eye but obvious to a person familiar with leet.
 
+Leet symbols, especially the number 1337, are Internet memes that have spilled over into popular culture. Signs that show the numbers "1337" are popular motifs for pictures and shared widely across the Internet.
+
 ## Implementations
 
 **Language** | **Encrypt**                  | **Decrypt**
