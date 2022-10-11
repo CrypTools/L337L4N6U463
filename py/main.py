@@ -12,8 +12,8 @@ def encrypt(message):
   substitutions = SUBSTITUTIONS
   message = message.lower()
   """
-  Takes a string as input returns the LEET version of that string. Leet, also known as eleet or leetspeak, 
-  is a system of modified spellings used primarily on the Internet.
+  Takes a string as input returns the LEET version of that string. Leet is a system of modified spellings used primarily on the Internet.
+  It's known as the language of hackers.
   Use: 
   	encrypt("message", SUBSTITUTIONS)
   	=> 'm355463'
